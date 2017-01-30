@@ -1,0 +1,151 @@
+﻿@model DiscountSchemesViewModel
+
+<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- row -->
+    <div class="row">
+
+        <!-- col -->
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark">
+                <!-- PAGE HEADER -->
+                @*TODO: Change this add/edit based on user creation *@
+                @((Model.DiscountScheme != null && Model.DiscountScheme.Id != 0) ? "Edit" : "Add") Scheme
+            </h1>
+        </div>
+        <!-- end col -->
+        <!-- right side of the page with the sparkline graphs -->
+        <!-- col -->
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+        </div>
+        <!-- end col -->
+
+    </div>
+    <!-- end row -->
+    <!--
+        The ID "widget-grid" will start to initialize all widgets below
+        You do not need to use widgets if you dont want to. Simply remove
+        the <section></section> and you can use wells or panels instead
+        -->
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well">
+                    @using (Html.BeginForm("Scheme", "Discount", FormMethod.Post, new { enctype = "multipart/form-data", @id = "schemeAddEditForm", @class = "form-horizontal" }))
+                    {
+                    @Html.HiddenFor(m => m.DiscountScheme.Id)
+                        @Html.HiddenFor(m => m.DiscountScheme.CreatedBy)
+                        @Html.HiddenFor(m => m.DiscountScheme.UpdatedBy)
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Scheme Name <sup>*</sup></label>
+                                        <div class="col-md-6 col-xs-12">
+                                            @Html.TextBoxFor(m => m.DiscountScheme.SchemeDescription, new { @required = "required", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Scheme Description</label>
+                                        <div class="col-md-6">
+                                                @Html.TextBoxFor(m => m.DiscountScheme.SchemeDescription, new { @required = "required", @class = "form-control" })
+                                        </div>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend></legend>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">From Date <sup>*</sup></label>
+                                        <div class="col-md-6 col-xs-12">
+                                            @Html.TextBoxFor(m => m.DiscountScheme.StartDate, new { @required = "required", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">To Date <sup>*</sup></label>
+                                        <div class="col-md-6 col-xs-12">
+                                            @Html.TextBoxFor(m => m.DiscountScheme.EndDate, new { @required = "required", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend></legend>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">SMS Text <sup>*</sup></label>
+                                        <div class="col-md-6 col-xs-12">
+                                            @Html.TextBoxFor(m => m.DiscountScheme.SMSText, new { @required = "required", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Is Active</label>
+                                        <div class="col-md-6">
+                                            <span class="onoffswitch">
+                                                @Html.CheckBoxFor(m => m.DiscountScheme.IsActive, new { @class = "onoffswitch-checkbox" })
+                                                <label class="onoffswitch-label" for="user_IsActive">
+                                                    <span class="onoffswitch-inner" data-swchon-text="Yes" data-swchoff-text="No"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </span>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-save"></i>
+                                        Save
+                                    </button>
+                                    <a class="btn btn-primary" href="@Request.UrlReferrer">
+                                        <i class="fa fa-undo"></i>
+                                        Back
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </article>
+            <!-- WIDGET END -->
+
+        </div>
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <!-- a blank row to get started -->
+            <div class="col-sm-12">
+                <!-- your contents here -->
+            </div>
+
+        </div>
+
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

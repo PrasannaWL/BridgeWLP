@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58D24B07-2577-43E4-B76C-B5E6410C70C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartERP.Entity</RootNamespace>
+    <AssemblyName>SmartERP.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\Account\IAccountDocumentType.cs" />
+    <Compile Include="Interface\Account\IAccountDocumentTypeNumber.cs" />
+    <Compile Include="Interface\Account\IAccountLedgerSummary.cs" />
+    <Compile Include="Interface\Base\IBase.cs" />
+    <Compile Include="Interface\Configuration\ICountry.cs" />
+    <Compile Include="Interface\Configuration\ICompany.cs" />
+    <Compile Include="Interface\Discount\IDiscounts.cs" />
+    <Compile Include="Interface\Discount\IDiscountDealerTargetGroup.cs" />
+    <Compile Include="Interface\Discount\IDiscountDealerTargetSlab.cs" />
+    <Compile Include="Interface\Discount\IDiscountFilterMaster.cs" />
+    <Compile Include="Interface\Discount\IDiscountScheme.cs" />
+    <Compile Include="Interface\Discount\IDiscountSchemeFilterHeader.cs" />
+    <Compile Include="Interface\Discount\IDiscountSchemeFilterValue.cs" />
+    <Compile Include="Interface\Discount\IDiscountSchemePercentage_DataModel.cs" />
+    <Compile Include="Interface\Discount\IDiscountSchemePercentage_Direct.cs" />
+    <Compile Include="Interface\Discount\IDiscountSchemePercentage_SlabModel.cs" />
+    <Compile Include="Interface\Log\ITraceLog.cs" />
+    <Compile Include="Interface\Sales\IDealer.cs" />
+    <Compile Include="Interface\Sales\ISaleOrderItemPriority.cs" />
+    <Compile Include="Interface\Sales\ISalePickListDetail.cs" />
+    <Compile Include="Interface\Sales\ISalePickListHeader.cs" />
+    <Compile Include="Interface\Sales\ISalesInvoice.cs" />
+    <Compile Include="Interface\Sales\ISalesInvoiceDiscount.cs" />
+    <Compile Include="Interface\Sales\ISalesInvoiceItem.cs" />
+    <Compile Include="Interface\Sales\ISalesInvoiceSerialNumber.cs" />
+    <Compile Include="Interface\Sales\ISalesInvoiceTax.cs" />
+    <Compile Include="Interface\Sales\IItem.cs" />
+    <Compile Include="Interface\Sales\ISalesOrder.cs" />
+    <Compile Include="Interface\Sales\ISalesOrderItem.cs" />
+    <Compile Include="Interface\Sales\ISalesOrderItemPriorityTracking.cs" />
+    <Compile Include="Interface\Sales\ISerialNumberMaster.cs" />
+    <Compile Include="Interface\Sales\ISerialNumberTransaction.cs" />
+    <Compile Include="Interface\User\IMenu.cs" />
+    <Compile Include="Interface\User\INotification.cs" />
+    <Compile Include="Interface\User\IUserMenu.cs" />
+    <Compile Include="Interface\User\IRoleUser.cs" />
+    <Compile Include="Interface\User\IRoleMenu.cs" />
+    <Compile Include="Interface\User\IRole.cs" />
+    <Compile Include="Interface\User\IUsers.cs" />
+    <Compile Include="Model\Account\AccountDocumentType.cs" />
+    <Compile Include="Model\Account\AccountDocumentTypeNumber.cs" />
+    <Compile Include="Model\Account\AccountLedgerSummary.cs" />
+    <Compile Include="Model\BusinessLocation\BusinessRegionBC.cs" />
+    <Compile Include="Model\BusinessLocation\BusinessZone.cs" />
+    <Compile Include="Model\BusinessLocation\BusinessRegion.cs" />
+    <Compile Include="Model\BusinessLocation\BusinessCenter.cs" />
+    <Compile Include="Model\Common\Allocation.cs" />
+    <Compile Include="Model\Configuration\Branch.cs" />
+    <Compile Include="Model\Configuration\MfgUnit.cs" />
+    <Compile Include="Model\Configuration\SBU.cs" />
+    <Compile Include="Model\Configuration\Company.cs" />
+    <Compile Include="Model\Configuration\studentEntity.cs" />
+    <Compile Include="Model\Configuration\WorkFlowApprovals.cs" />
+    <Compile Include="Model\Configuration\WorkFlowForm.cs" />
+    <Compile Include="Model\Discount\Discounts.cs" />
+    <Compile Include="Model\Discount\DiscountDealerTargetGroup.cs" />
+    <Compile Include="Model\Discount\DiscountDealerTargetSlab.cs" />
+    <Compile Include="Model\Discount\DiscountFilterMaster.cs" />
+    <Compile Include="Model\Discount\DiscountScheme.cs" />
+    <Compile Include="Model\Discount\DiscountSchemeFilterHeader.cs" />
+    <Compile Include="Model\Discount\DiscountSchemeFilterValue.cs" />
+    <Compile Include="Model\Discount\DiscountSchemePercentage_DataModel.cs" />
+    <Compile Include="Model\Discount\DiscountSchemePercentage_Direct.cs" />
+    <Compile Include="Model\Discount\DiscountSchemePercentage_SlabModel.cs" />
+    <Compile Include="Model\Geo\GeoZone.cs" />
+    <Compile Include="Model\Geo\GeoRegion.cs" />
+    <Compile Include="Model\Geo\GeoState.cs" />
+    <Compile Include="Model\Geo\GeoDistrict.cs" />
+    <Compile Include="Model\Log\ErrorLog.cs" />
+    <Compile Include="Model\Log\TraceLog.cs" />
+    <Compile Include="Model\Configuration\Country.cs" />
+    <Compile Include="Model\Sales\Dealer.cs" />
+    <Compile Include="Model\Sales\Item.cs" />
+    <Compile Include="Model\Sales\SaleOrderItemPriority.cs" />
+    <Compile Include="Model\Sales\SalePickListDetail.cs" />
+    <Compile Include="Model\Sales\SalePickListHeader.cs" />
+    <Compile Include="Model\Sales\SalesInvoice.cs" />
+    <Compile Include="Model\Sales\SalesInvoiceDiscount.cs" />
+    <Compile Include="Model\Sales\SalesInvoiceItem.cs" />
+    <Compile Include="Model\Sales\SalesInvoiceSerialNumber.cs" />
+    <Compile Include="Model\Sales\SalesInvoiceTax.cs" />
+    <Compile Include="Model\Sales\SalesOrder.cs" />
+    <Compile Include="Model\Sales\SalesOrderItem.cs" />
+    <Compile Include="Model\Sales\SalesOrderItemPriorityTracking.cs" />
+    <Compile Include="Model\Sales\SerialNumberMaster.cs" />
+    <Compile Include="Model\Sales\SerialNumberTransaction.cs" />
+    <Compile Include="Model\User\Menu.cs" />
+    <Compile Include="Model\User\Notification.cs" />
+    <Compile Include="Model\User\Role.cs" />
+    <Compile Include="Model\User\RoleGroup.cs" />
+    <Compile Include="Model\User\RoleMenu.cs" />
+    <Compile Include="Model\User\RoleUser.cs" />
+    <Compile Include="Model\User\Security.cs" />
+    <Compile Include="Model\User\Session.cs" />
+    <Compile Include="Model\User\Users.cs" />
+    <Compile Include="Model\Base\BaseEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\User\UserMenu.cs" />
+    <Compile Include="Model\User\UsageTracking.cs" />
+    <Compile Include="Utility\IRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\User\ISecurity.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
